@@ -8,7 +8,11 @@ git clone git@github.com:lexxdavv/tictactoe.git
 git clone
 ``` 
 only do this once when cloning the repo
+
+
 ^
+
+
 ```
 git status
 ```
