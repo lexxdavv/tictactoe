@@ -1,10 +1,10 @@
 # Git Notes
 
-git clone only once when cloning the repo
-
 ```
 git clone git@github.com:lexxdavv/tictactoe.git
 ```
+
+git clone only once when cloning the repo
 
 git status
 
