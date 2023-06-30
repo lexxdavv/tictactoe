@@ -170,6 +170,15 @@ while not gameover:
         cur_player = 'X'
     else:
         print('Invalid move! Please pick a new space!')
+    
+    # check for winning condition
+    if row_1[0] == 'X' and row_1[1] =='X' and row_1[2] == 'X':
+        gameover = True
+        print("Winner is X")
+    elif row_1[0] == 'X' and row_2[0] == 'X' and row_3[0] == 'X':
+        gameover = True
+        print("Winner is X")
+
 
     if cur_player != 'O':
         counter += 1
