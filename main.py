@@ -53,6 +53,8 @@ print("hello world")'''
 # row_3 = ['X', 'Y', 'Z']
 
 
+cur_player = ''
+
 row_1 = [' ', ' ', ' ']
 row_2 = [' ', ' ', ' ']
 row_3 = [' ', ' ', ' ']
@@ -65,36 +67,110 @@ def board():
     print(f"{row_3[0]}|{row_3[1]}|{row_3[2]}")
 #board()
 
+#counting up to the number of possible turns which is 9, counter starts @ 0 bc no one has taken a turn, so after the first turn it counts up until the last turn
+counter = 0
+
+#allow players to keep playing until gameover = True/all 9 turns are fulfilled (will change it someone wins b4 9 turns)
 gameover = False
+
+#while gameover is not true, current player is blank, x's turn bc counter is 0 or divisible by 2, if not then it will be o's turn
 while not gameover:
-    response = input('Which space do you want to fill with an X?:')
+    cur_player = ''
+    if counter == 0 or counter % 2 == 0:
+        cur_player = 'X'
+    else:
+        cur_player = 'O'
+
+#prints whose turn it is and asks for input
+    print(f"Player {cur_player} turn.")
+    response = input('Which space do you want to fill with an ' + cur_player + '?:')
+
 
     if response == '0,0' and row_1[0] == ' ':
         row_1[0] = 'X'
         board()
+        cur_player = 'O'
     elif response == '0,1' and row_1[1] == ' ':
         row_1[1] = 'X'
         board()
+        cur_player = 'O'
     elif response == '0,2' and row_1[2] == ' ':
         row_1[2] = 'X'
         board()
+        cur_player = 'O'
     elif response == '1,0' and row_2[0] == ' ':
         row_2[0] = 'X'
         board()
+        cur_player = 'O'
     elif response == '1,1' and row_2[1] == ' ':
         row_2[1] = 'X'
         board()
+        cur_player = 'O'
     elif response == '1,2' and row_2[2] == ' ':
         row_2[2] = 'X'
         board()
+        cur_player = 'O'
     elif response == '2,0' and row_3[0] == ' ':
         row_3[0] = 'X'
         board()
+        cur_player = 'O'
     elif response == '2,1' and row_3[1] == ' ':
         row_3[1] = 'X'
         board()
+        cur_player = 'O'
     elif response == '2,2' and row_3[2] == ' ':
         row_3[2] = 'X'
         board()
+        cur_player = 'O'
     else:
         print('Invalid move! Please pick a new space!')
+
+    if cur_player != 'X':
+        counter += 1
+        print(counter)
+
+    print(f"Player {cur_player} turn.")
+    response = input('Which space do you want to fill with an ' + cur_player + '?:')
+
+    if response == '0,0' and row_1[0] == ' ':
+        row_1[0] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '0,1' and row_1[1] == ' ':
+        row_1[1] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '0,2' and row_1[2] == ' ':
+        row_1[2] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '1,0' and row_2[0] == ' ':
+        row_2[0] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '1,1' and row_2[1] == ' ':
+        row_2[1] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '1,2' and row_2[2] == ' ':
+        row_2[2] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '2,0' and row_3[0] == ' ':
+        row_3[0] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '2,1' and row_3[1] == ' ':
+        row_3[1] = 'O'
+        board()
+        cur_player = 'X'
+    elif response == '2,2' and row_3[2] == ' ':
+        row_3[2] = 'O'
+        board()
+        cur_player = 'X'
+    else:
+        print('Invalid move! Please pick a new space!')
+
+    if cur_player != 'O':
+        counter += 1
+        print(counter)
