@@ -85,7 +85,7 @@ while not gameover:
     print(f"Player {cur_player} turn.")
     response = input('Which space do you want to fill with an ' + cur_player + '?:')
 
-
+# allows player X to take their turn
     if response == '0,0' and row_1[0] == ' ':
         row_1[0] = 'X'
         board()
@@ -125,7 +125,7 @@ while not gameover:
     else:
         print('Invalid move! Please pick a new space!')
 
-        # check for winning condition
+# check for winning condition for player X
     if row_1[0] == 'X' and row_1[1] =='X' and row_1[2] == 'X':
         gameover = True
         print("Winner is X")
@@ -134,11 +134,35 @@ while not gameover:
         gameover = True
         print("Winner is X")
         exit()
-    
-
+    elif row_1[1] == 'X' and row_2[1] == 'X' and row_3[1] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    elif row_1[2] == 'X' and row_2[2] == 'X' and row_3[2] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    elif row_2[0] == 'X' and row_2[1] == 'X' and row_2[2] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    elif row_3[0] == 'X' and row_3[1] == 'X' and row_3[2] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    elif row_1[0] == 'X' and row_2[1] == 'X' and row_3[2] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    elif row_1[2] == 'X' and row_2[1] == 'X' and row_3[0] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+# prints player X or O turn and asks user what space they want to fill with X/O
     print(f"Player {cur_player} turn.")
     response = input('Which space do you want to fill with an ' + cur_player + '?:')
 
+# allows player O to take their turn
     if response == '0,0' and row_1[0] == ' ':
         row_1[0] = 'O'
         board()
@@ -177,7 +201,8 @@ while not gameover:
         cur_player = 'X'
     else:
         print('Invalid move! Please pick a new space!')
-    # check for winning condition
+
+# check for winning condition for player O
     if row_1[0] == 'O' and row_1[1] =='O' and row_1[2] == 'O':
         gameover = True
         print("Winner is O")
@@ -186,9 +211,28 @@ while not gameover:
         gameover = True
         print("Winner is O")
         exit()
+    elif row_1[1] == 'O' and row_2[1] == 'O' and row_3[1] == 'O':
+        gameover = True
+        print("Winner is O")
+        exit()
+    elif row_1[2] == 'O' and row_2[2] == 'O' and row_3[2] == 'O':
+        gameover = True
+        print("Winner is O")
+        exit()
+    elif row_2[0] == 'O' and row_2[1] == 'O' and row_2[2] == 'O':
+        gameover = True
+        print("Winner is O")
+        exit()
+    elif row_3[0] == 'O' and row_3[1] == 'O' and row_3[2] == 'O':
+        gameover = True
+        print("Winner is O")
+        exit()
+    elif row_1[0] == 'O' and row_2[1] == 'O' and row_3[2] == 'O':
+        gameover = True
+        print("Winner is O")
+        exit()
+    elif row_1[2] == 'O' and row_2[1] == 'O' and row_3[0] == 'O':
+        gameover = True
+        print("Winner is O")
+        exit()
 
-
-
-# while gameover is not True:
-#     counter += 1
-#     print(counter)
