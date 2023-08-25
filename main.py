@@ -125,9 +125,16 @@ while not gameover:
     else:
         print('Invalid move! Please pick a new space!')
 
-    if cur_player != 'X':
-        counter += 1
-        print(counter)
+        # check for winning condition
+    if row_1[0] == 'X' and row_1[1] =='X' and row_1[2] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    elif row_1[0] == 'X' and row_2[0] == 'X' and row_3[0] == 'X':
+        gameover = True
+        print("Winner is X")
+        exit()
+    
 
     print(f"Player {cur_player} turn.")
     response = input('Which space do you want to fill with an ' + cur_player + '?:')
@@ -170,16 +177,18 @@ while not gameover:
         cur_player = 'X'
     else:
         print('Invalid move! Please pick a new space!')
-    
     # check for winning condition
-    if row_1[0] == 'X' and row_1[1] =='X' and row_1[2] == 'X':
+    if row_1[0] == 'O' and row_1[1] =='O' and row_1[2] == 'O':
         gameover = True
-        print("Winner is X")
-    elif row_1[0] == 'X' and row_2[0] == 'X' and row_3[0] == 'X':
+        print("Winner is O")
+        exit()
+    elif row_1[0] == 'O' and row_2[0] == 'O' and row_3[0] == 'O':
         gameover = True
-        print("Winner is X")
+        print("Winner is O")
+        exit()
 
 
-    if cur_player != 'O':
-        counter += 1
-        print(counter)
+
+# while gameover is not True:
+#     counter += 1
+#     print(counter)
