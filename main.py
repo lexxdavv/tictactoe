@@ -124,6 +124,7 @@ while not gameover:
         cur_player = 'O'
     else:
         print('Invalid move! Please pick a new space!')
+        continue
 
     if cur_player != 'X':
         counter += 1
@@ -170,6 +171,7 @@ while not gameover:
         cur_player = 'X'
     else:
         print('Invalid move! Please pick a new space!')
+        continue
 
     if cur_player != 'O':
         counter += 1
