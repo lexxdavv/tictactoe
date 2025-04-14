@@ -53,7 +53,7 @@ print("hello world")'''
 # row_3 = ['X', 'Y', 'Z']
 
 
-cur_player = ''
+#cur_player = ''
 
 row_1 = [' ', ' ', ' ']
 row_2 = [' ', ' ', ' ']
@@ -70,12 +70,13 @@ def board():
 #counting up to the number of possible turns which is 9, counter starts @ 0 bc no one has taken a turn, so after the first turn it counts up until the last turn
 counter = 0
 
-#allow players to keep playing until gameover = True/all 9 turns are fulfilled (will change it someone wins b4 9 turns)
+#allow players to keep playing until gameover = True/all 9 turns are fulfilled (will change if someone wins b4 9 turns)
 gameover = False
 
-#while gameover is not true, current player is blank, x's turn bc counter is 0 or divisible by 2, if not then it will be o's turn
+#while gameover is not true, current player is blank, x's turn bc counter is 0 or divisible by 2(bc any num divisible by 2 doesnt have remainder & remainder of 2 has to == 0), if not then it will be o's turn
+#asking: is gameover false? yes, it is false so we enter the loop.
 while not gameover:
-    cur_player = ''
+    #cur_player = ''
     if counter == 0 or counter % 2 == 0:
         cur_player = 'X'
     else:
@@ -84,6 +85,31 @@ while not gameover:
 #prints whose turn it is and asks for input
     print(f"Player {cur_player} turn.")
     response = input('Which space do you want to fill with an ' + cur_player + '?:')
+
+
+
+
+#look into global...good or bad? when is it good or bad to use?
+    def restart():
+        global gameover
+        #play_again = ""
+        while gameover:
+            play_again = input("Gameover! Do you want to play again? Y or N: ")
+            if play_again == "Y":
+                gameover = False
+                counter = 0
+                
+                board()
+            if play_again == "N":
+                gameover = True
+                print("Thanks for playing!")
+                exit()
+        #restart()
+
+
+
+
+
 
 # allows player X to take their turn
     if response == '0,0' and row_1[0] == ' ':
@@ -130,35 +156,43 @@ while not gameover:
     if row_1[0] == 'X' and row_1[1] =='X' and row_1[2] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_1[0] == 'X' and row_2[0] == 'X' and row_3[0] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_1[1] == 'X' and row_2[1] == 'X' and row_3[1] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_1[2] == 'X' and row_2[2] == 'X' and row_3[2] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_2[0] == 'X' and row_2[1] == 'X' and row_2[2] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_3[0] == 'X' and row_3[1] == 'X' and row_3[2] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_1[0] == 'X' and row_2[1] == 'X' and row_3[2] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
     elif row_1[2] == 'X' and row_2[1] == 'X' and row_3[0] == 'X':
         gameover = True
         print("Winner is X")
-        exit()
+        #exit()
+        restart()
 # prints player X or O turn and asks user what space they want to fill with X/O
     print(f"Player {cur_player} turn.")
     response = input('Which space do you want to fill with an ' + cur_player + '?:')
@@ -208,33 +242,55 @@ while not gameover:
     if row_1[0] == 'O' and row_1[1] =='O' and row_1[2] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_1[0] == 'O' and row_2[0] == 'O' and row_3[0] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_1[1] == 'O' and row_2[1] == 'O' and row_3[1] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_1[2] == 'O' and row_2[2] == 'O' and row_3[2] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_2[0] == 'O' and row_2[1] == 'O' and row_2[2] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_3[0] == 'O' and row_3[1] == 'O' and row_3[2] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_1[0] == 'O' and row_2[1] == 'O' and row_3[2] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
+        #exit()
+        restart()
     elif row_1[2] == 'O' and row_2[1] == 'O' and row_3[0] == 'O':
         gameover = True
         print("Winner is O")
-        exit()
-
+        #exit()
+        restart()
+'''        
+def restart():
+    play_again = ""
+    while gameover:
+        play_again = input("Gameover! Do you want to play again? Y or N: ")
+        if play_again == "Y":
+            gameover = False
+            counter = 0
+            board()
+        if play_again == "N":
+            gameover = True
+            print("Thanks for playing!")
+            exit()
+restart()
+'''
