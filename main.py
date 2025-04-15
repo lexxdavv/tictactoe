@@ -49,6 +49,7 @@ print("hello world")'''
 # response = input('Which space do you want to fill with an X?:')
 # declare tie
 # ask does player want to play alone with ai or with a person
+# make sure if the player who wins wants to play again they start first
 
 # row_1 = ['A', 'B', 'C']
 # row_2 = ['1', '2', '3']
