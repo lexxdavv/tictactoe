@@ -48,6 +48,7 @@ print("hello world")'''
 # pretend tic tac toe board is a grid. 0,0 is the upper left. 2,2 is the bottom right.
 # response = input('Which space do you want to fill with an X?:')
 # declare tie
+# ask does player want to play alone with ai or with a person
 
 # row_1 = ['A', 'B', 'C']
 # row_2 = ['1', '2', '3']
