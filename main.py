@@ -47,7 +47,7 @@ print("hello world")'''
 # TODO: down the line tic-tac-toe vs computer
 # pretend tic tac toe board is a grid. 0,0 is the upper left. 2,2 is the bottom right.
 # response = input('Which space do you want to fill with an X?:')
-#declare tie
+# declare tie
 
 # row_1 = ['A', 'B', 'C']
 # row_2 = ['1', '2', '3']
