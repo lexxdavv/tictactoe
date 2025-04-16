@@ -51,6 +51,7 @@ print("hello world")'''
 # ask does player want to play alone with ai or with a person
 # make sure if the player who wins wants to play again they start first     
 # if statements and print board before each game for new games
+# possibly make into an app
 
 # row_1 = ['A', 'B', 'C']
 # row_2 = ['1', '2', '3']
